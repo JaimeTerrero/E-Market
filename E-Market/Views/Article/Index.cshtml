@@ -1,0 +1,44 @@
+﻿@model List<Application.ViewModels.ArticleViewModel>
+@{
+    ViewData["Title"] = "Ads";
+}
+
+<div class="container-fluid">
+
+    <div class="row mb-3">
+        <div class="col-3 offset-9">
+            <a asp-controller="Article" asp-action="Create" class="btn btn-outline-success">Crear nuevo anuncio</a>
+        </div>
+    </div>
+
+    <div class="row">
+
+        @if(Model == null || Model.Count == 0)
+        {
+            <h2>No hay nada aún</h2>
+        }
+        else
+        {
+            @foreach (Application.ViewModels.ArticleViewModel item in Model)
+            {
+                <div class="col-4">
+                    <div class="card shadow-sm">
+                        <img class="bd-placeholder-img card-img-top img-product-size" src="@item.ImageUrl" />
+
+                        <div class="card-body">
+                            <h4>@item.Name</h4>
+                            <p class="card-text">@item.Description</p>
+                            <div class="d-flex">
+                                <div class="btn-group">
+                                    <a asp-controller="Article" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info">Editar</a>
+                                    <a asp-controller="Article" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Borrar</a>
+                                </div>
+                            </div>
+                            <small class="fw-bold fs-6">$@item.Price</small>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
