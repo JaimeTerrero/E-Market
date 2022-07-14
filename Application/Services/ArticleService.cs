@@ -1,27 +1,31 @@
-﻿using Application.Repository;
-using Application.ViewModels;
-using Database;
-using Database.Models;
-using System;
+﻿using EMarket.Core.Application.Helpers;
+using EMarket.Core.Application.Interfaces.Repositories;
+using EMarket.Core.Application.Interfaces.Services;
+using EMarket.Core.Application.ViewModels.Articles;
+using EMarket.Core.Application.ViewModels.Users;
+using EMarket.Core.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Application.Services
 {
-    public class ArticleService
+    public class ArticleService : IArticleService
     {
-        private readonly ArticleRepository _articleRepository;
-
-        public ArticleService(ApplicationContext dbContext)
+        private readonly IArticleRepository _articleRepository;
+        private readonly IHttpContextAccessor _httpcontextAccessor;
+        private readonly UserViewModel userViewModel;
+        public ArticleService(IArticleRepository articleRepository, IHttpContextAccessor httpcontextAccessor)
         {
-            _articleRepository = new (dbContext);
+            _articleRepository = articleRepository;
+            _httpcontextAccessor = httpcontextAccessor;
+            userViewModel = _httpcontextAccessor.HttpContext.Session.Get<UserViewModel>("user");
         }
 
         public async Task Update(SaveArticleViewModel vm)
         {
-            Article article = new();
+            Article article = await _articleRepository.GetByIdAsync(vm.Id);
             article.Id = vm.Id;
             article.Name = vm.Name;
             article.Price = vm.Price;
@@ -32,16 +36,26 @@ namespace Application.Services
             await _articleRepository.UpdateAsync(article);
         }
 
-        public async Task Add(SaveArticleViewModel vm)
+        public async Task<SaveArticleViewModel> Add(SaveArticleViewModel vm)
         {
             Article article = new();
             article.Name = vm.Name;
             article.Price = vm.Price;
             article.Description = vm.Description;
-            article.ImageUrl = vm.ImageUrl;
             article.CategoryId = vm.CategoryId;
+            article.UserId = userViewModel.Id;
 
-            await _articleRepository.AddAsync(article);
+            article = await _articleRepository.AddAsync(article);
+
+            SaveArticleViewModel articleVm = new();
+            articleVm.Id = article.Id;
+            articleVm.Name = article.Name;
+            articleVm.Price = article.Price;
+            articleVm.Description = article.Description;
+            articleVm.ImageUrl = article.ImageUrl;
+            articleVm.CategoryId = article.CategoryId;
+
+            return articleVm;
         }
 
         public async Task Delete(int id)
@@ -67,17 +81,41 @@ namespace Application.Services
 
         public async Task<List<ArticleViewModel>> GetAllViewModel()
         {
-            var articleList = await _articleRepository.GetAllAsync();
+            var articleList = await _articleRepository.GetAllWithIncludeAsync(new List<string> {"Category" });
 
-            return articleList.Select(article => new ArticleViewModel
+            return articleList.Where(article => article.UserId == userViewModel.Id).Select(article => new ArticleViewModel
             {
                 Name = article.Name,
                 Description = article.Description,
                 Id = article.Id,
                 Price = article.Price,
-                ImageUrl = article.ImageUrl
+                ImageUrl = article.ImageUrl,
+                CategoryName = article.Category.Name,
+                CategoryId = article.Category.Id
             }).ToList();
         }
 
+        public async Task<List<ArticleViewModel>> GetAllViewModelWithFilters(FilterArticleViewModel filters)
+        {
+            var articleList = await _articleRepository.GetAllWithIncludeAsync(new List<string> { "Category" });
+
+            var listViewModels = articleList.Where(article => article.UserId == userViewModel.Id).Select(article => new ArticleViewModel
+            {
+                Name = article.Name,
+                Description = article.Description,
+                Id = article.Id,
+                Price = article.Price,
+                ImageUrl = article.ImageUrl,
+                CategoryName = article.Category.Name,
+                CategoryId = article.Category.Id
+            }).ToList();
+
+            if(filters.CategoryId != null)
+            {
+                listViewModels = listViewModels.Where(product => product.CategoryId == filters.CategoryId.Value).ToList();
+            }
+
+            return listViewModels;
+        }
     }
 }
