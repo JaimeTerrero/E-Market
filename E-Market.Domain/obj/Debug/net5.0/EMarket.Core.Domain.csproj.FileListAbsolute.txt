@@ -10,3 +10,15 @@ C:\Users\Jaime David Terrero\source\repos\E-Market\E-Market.Domain\obj\Debug\net
 C:\Users\Jaime David Terrero\source\repos\E-Market\E-Market.Domain\obj\Debug\net5.0\refint\EMarket.Core.Domain.dll
 C:\Users\Jaime David Terrero\source\repos\E-Market\E-Market.Domain\obj\Debug\net5.0\EMarket.Core.Domain.pdb
 C:\Users\Jaime David Terrero\source\repos\E-Market\E-Market.Domain\obj\Debug\net5.0\ref\EMarket.Core.Domain.dll
+C:\Users\Jaime David Terrero\OneDrive\Documentos\GitHub\E-Market\E-Market.Domain\bin\Debug\net5.0\EMarket.Core.Domain.deps.json
+C:\Users\Jaime David Terrero\OneDrive\Documentos\GitHub\E-Market\E-Market.Domain\bin\Debug\net5.0\EMarket.Core.Domain.dll
+C:\Users\Jaime David Terrero\OneDrive\Documentos\GitHub\E-Market\E-Market.Domain\bin\Debug\net5.0\EMarket.Core.Domain.pdb
+C:\Users\Jaime David Terrero\OneDrive\Documentos\GitHub\E-Market\E-Market.Domain\obj\Debug\net5.0\EMarket.Core.Domain.csproj.AssemblyReference.cache
+C:\Users\Jaime David Terrero\OneDrive\Documentos\GitHub\E-Market\E-Market.Domain\obj\Debug\net5.0\EMarket.Core.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jaime David Terrero\OneDrive\Documentos\GitHub\E-Market\E-Market.Domain\obj\Debug\net5.0\EMarket.Core.Domain.AssemblyInfoInputs.cache
+C:\Users\Jaime David Terrero\OneDrive\Documentos\GitHub\E-Market\E-Market.Domain\obj\Debug\net5.0\EMarket.Core.Domain.AssemblyInfo.cs
+C:\Users\Jaime David Terrero\OneDrive\Documentos\GitHub\E-Market\E-Market.Domain\obj\Debug\net5.0\EMarket.Core.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Jaime David Terrero\OneDrive\Documentos\GitHub\E-Market\E-Market.Domain\obj\Debug\net5.0\EMarket.Core.Domain.dll
+C:\Users\Jaime David Terrero\OneDrive\Documentos\GitHub\E-Market\E-Market.Domain\obj\Debug\net5.0\refint\EMarket.Core.Domain.dll
+C:\Users\Jaime David Terrero\OneDrive\Documentos\GitHub\E-Market\E-Market.Domain\obj\Debug\net5.0\EMarket.Core.Domain.pdb
+C:\Users\Jaime David Terrero\OneDrive\Documentos\GitHub\E-Market\E-Market.Domain\obj\Debug\net5.0\ref\EMarket.Core.Domain.dll

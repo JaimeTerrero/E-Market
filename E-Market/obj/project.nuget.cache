@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o+5b7ezTNbBR4Ji7Bef1MlaBV5v+WkZPRGLEFJa8L7xUlX9UNxOqgjc2EKrUT+aVGiiO6rv/y67Ya98Hb6F3OA==",
+  "dgSpecHash": "RefzCBmz0nu08RP2Cv5DNKi4iM+ZyjC/bn0wbkcZ8IKsw9NsJsE99cXklR4AD5USvOuq24RJQMG8ZyytvuYG5w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jaime David Terrero\\source\\repos\\E-Market\\E-Market\\WebApp.EMarket.csproj",
+  "projectFilePath": "C:\\Users\\Jaime David Terrero\\OneDrive\\Documentos\\GitHub\\E-Market\\E-Market\\WebApp.EMarket.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jaime David Terrero\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Jaime David Terrero\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Vj8v6utiSYHmwO3BwtIkiHC9/YlVWj2r2V6n6kdyl+WMGOUU9K/vBRFRWPAWFiWl9oFsNJzh0swxKbG9el36hw==",
+  "dgSpecHash": "SeJm/IxJmmMbUZtjF3xaAg38u/pL6fzHj6Oskk9J2acWZaCUmRSHuXmZnTyoWKTd+qJNu4LAd4TqtjNPh/NWNg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jaime David Terrero\\source\\repos\\E-Market\\Application\\EMarket.Core.Application.csproj",
+  "projectFilePath": "C:\\Users\\Jaime David Terrero\\OneDrive\\Documentos\\GitHub\\E-Market\\Application\\EMarket.Core.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jaime David Terrero\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
     "C:\\Users\\Jaime David Terrero\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
